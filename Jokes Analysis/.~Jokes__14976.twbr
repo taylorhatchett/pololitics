@@ -1,0 +1,2140 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10300.17.0320.1551                               -->
+<workbook source-build='10.3.0 (10300.17.0320.1551)' source-platform='mac' version='10.3' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <repository-location id='Jokes' path='/workbooks' revision='1.2' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <style-rule element='worksheet'>
+      <format attr='font-family' value='Arial Narrow' />
+      <format attr='font-size' value='11' />
+      <format attr='font-weight' value='bold' />
+    </style-rule>
+    <style-rule element='title'>
+      <format attr='font-family' value='Arial Narrow' />
+      <format attr='font-size' value='18' />
+    </style-rule>
+    <style-rule element='tooltip'>
+      <format attr='font-family' value='Arial Narrow' />
+      <format attr='font-size' value='11' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='10.3'>
+      <aliases enabled='yes' />
+      <column caption='Search1' datatype='string' name='[Parameter 1]' param-domain-type='any' role='measure' type='nominal' value='&quot;china&quot;'>
+        <calculation class='tableau' formula='&quot;china&quot;' />
+      </column>
+      <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+        <calculation class='tableau' formula='&quot;Putin&quot;' />
+      </column>
+      <column caption='Wildcard' datatype='string' name='[Parameter 3]' param-domain-type='any' role='measure' type='nominal' value='&quot;&quot;'>
+        <calculation class='tableau' formula='&quot;&quot;' />
+      </column>
+    </datasource>
+    <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' inline='true' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' version='10.3'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Edited Jokes - Late Night Only' name='excel-direct.150mucp008v9dr1eo7qt60lb1isl'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/thatchett/Documents/Jokes Analysis/Edited Jokes - Late Night Only.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.150mucp008v9dr1eo7qt60lb1isl' name='Edited Jokes - Late Night Only' table='[&apos;Edited Jokes - Late Night Only$&apos;]' type='table'>
+          <columns gridOrigin='A1:D10001:no:A1:D10001:0' header='yes' outcome='6'>
+            <column datatype='string' name='JOKE' ordinal='0' />
+            <column datatype='integer' name='KEY' ordinal='1' />
+            <column datatype='date' name='DATE' ordinal='2' />
+            <column datatype='string' name='COMEDIAN' ordinal='3' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>JOKE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[JOKE]</local-name>
+            <parent-name>[Edited Jokes - Late Night Only]</parent-name>
+            <remote-alias>JOKE</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>KEY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[KEY]</local-name>
+            <parent-name>[Edited Jokes - Late Night Only]</parent-name>
+            <remote-alias>KEY</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DATE]</local-name>
+            <parent-name>[Edited Jokes - Late Night Only]</parent-name>
+            <remote-alias>DATE</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COMEDIAN</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[COMEDIAN]</local-name>
+            <parent-name>[Edited Jokes - Late Night Only]</parent-name>
+            <remote-alias>COMEDIAN</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Edited Jokes - Late Night Only]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D10001:no:A1:D2147483647:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Comedian' datatype='string' name='[COMEDIAN]' role='dimension' type='nominal' />
+      <column caption='SearchBool' datatype='boolean' name='[Calculation_2012405379324764161]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CONTAINS(UPPER([JOKE]),UPPER([Parameters].[Parameter 1]))' />
+      </column>
+      <column caption='S1' datatype='integer' name='[Calculation_2012405379326083074]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;)' />
+      </column>
+      <column caption='S2' datatype='integer' name='[Calculation_2012405379326169091]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326083074]+1)' />
+      </column>
+      <column caption='S3' datatype='integer' name='[Calculation_2012405379326349316]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_2012405379326169091] != 0 THEN FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326169091]+1) END' />
+      </column>
+      <column caption='W1' datatype='string' name='[Calculation_2012405379326509061]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN [Parameters].[Parameter 2] ELSE LEFT([Parameters].[Parameter 2],[Calculation_2012405379326083074]-1) END' />
+      </column>
+      <column caption='W2' datatype='string' name='[Calculation_2012405379326644230]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326083074]+1,[Calculation_2012405379326169091]-[Calculation_2012405379326083074])&#10;END' />
+      </column>
+      <column caption='W3' datatype='string' name='[Calculation_2012405379326832647]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] != 0 AND [Calculation_2012405379326349316] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326169091]+1,[Calculation_2012405379326349316]-[Calculation_2012405379326169091])&#10;END' />
+      </column>
+      <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+      </column>
+      <column caption='Hover' datatype='string' name='[Calculation_2012405379341660170]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&quot;Hover to read joke&quot;' />
+      </column>
+      <column caption='Wildcard Search' datatype='boolean' name='[Calculation_2012405379349274637]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='LOWER(LEFT([JOKE],LEN([Parameters].[Parameter 3]))) = LOWER([Parameters].[Parameter 3])' />
+      </column>
+      <column caption='Sum ZN Lookup' datatype='integer' name='[Calculation_2012405379352752142]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ZN(LOOKUP(SUM([Number of Records]),0))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Joke (Trim)' datatype='string' name='[Calculation_2012405379356745748]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='TRIM([JOKE])' />
+      </column>
+      <column datatype='string' name='[Comedian (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[COMEDIAN]' new-bin='true'>
+          <bin default-name='false' value='&quot;Conan O&apos;Brien&quot;'>
+            <value>&quot;Conan OBrian&quot;</value>
+            <value>&quot;Conan OBrien&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Craig Kilborn&quot;'>
+            <value>&quot;Craig Kilbon&quot;</value>
+            <value>&quot;Craig Kilborn&quot;</value>
+            <value>&quot;Craig Kilburn&quot;</value>
+            <value>&quot;Craig Killborn&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;David Letterman&quot;'>
+            <value>&quot;Dave Letterman&quot;</value>
+            <value>&quot;David Leterman&quot;</value>
+            <value>&quot;David Letterman&quot;</value>
+            <value>&quot;David Letterman (Current Events segment)&quot;</value>
+            <value>&quot;Davie Letterman&quot;</value>
+            <value>&quot;Davis Letterman&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Jay Leno&quot;'>
+            <value>&quot;Jay Leno&quot;</value>
+            <value>&quot;Jay Leno;&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Seth Meyers&quot;'>
+            <value>&quot;Seth Meyers&quot;</value>
+            <value>&quot;Seth Myers&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+      <column datatype='date' name='[Date (Exact)]' role='dimension' type='quantitative' user:agg-type='None' user:base-field='DATE' user:ui-builder='date-bin-builder'>
+        <calculation class='tableau' formula='[DATE]' />
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Date (Month / Year)]' role='dimension' type='ordinal' user:agg-type='MY' user:base-field='DATE' user:ui-builder='date-bin-builder'>
+        <calculation class='tableau' formula='(DATEPART(&apos;year&apos;, [DATE])*100 + DATEPART(&apos;month&apos;, [DATE]))' />
+      </column>
+      <column datatype='date' name='[Date (Months)]' role='dimension' type='quantitative' user:agg-type='Month-Trunc' user:base-field='DATE' user:ui-builder='date-bin-builder'>
+        <calculation class='tableau' formula='DATE(DATETRUNC(&apos;month&apos;, [DATE]))' />
+      </column>
+      <column caption='Joke' datatype='string' name='[JOKE]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[KEY]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Avg ZN Lookup' datatype='integer' name='[Sum ZN Lookup (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([Date (Month / Year)])' />
+      </column>
+      <column-instance column='[DATE]' derivation='Month' name='[mn:DATE:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[DATE]' derivation='Month-Trunc' name='[tmn:DATE:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[DATE]' derivation='Week-Trunc' name='[twk:DATE:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (Comedian (group))' hidden='true' name='[Action (Comedian (group))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Comedian (group)]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Comedian (group),MONTH(Date))' hidden='true' name='[Action (Comedian (group),MONTH(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Comedian (group)]' />
+          <groupfilter function='level-members' level='[tmn:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Comedian (group),WEEK(Date))' hidden='true' name='[Action (Comedian (group),WEEK(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Comedian (group)]' />
+          <groupfilter function='level-members' level='[twk:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Comedian (group),YEAR(Date),MONTH(Date))' hidden='true' name='[Action (Comedian (group),YEAR(Date),MONTH(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Comedian (group)]' />
+          <groupfilter function='level-members' level='[yr:DATE:ok]' />
+          <groupfilter function='level-members' level='[mn:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (MONTH(Date))' hidden='true' name='[Action (MONTH(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[tmn:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (YEAR(Date))' hidden='true' name='[Action (YEAR(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[yr:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (YEAR(Date),MONTH(Date))' hidden='true' name='[Action (YEAR(Date),MONTH(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[yr:DATE:ok]' />
+          <groupfilter function='level-members' level='[mn:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='true' units='records'>
+        <connection class='dataengine' dbname='/Users/thatchett/Documents/My Tableau Repository/Datasources/Jokes.tde' schema='Extract' tablename='Extract' update-time='01/16/2017 04:31:38 AM'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <calculations>
+            <calculation column='[Calculation_2012405379356745748]' formula='TRIM([JOKE])' />
+            <calculation column='[Comedian (group)]' formula='CASE [COMEDIAN]&#10;  WHEN &quot;Conan OBrian&quot; THEN &quot;Conan O&apos;Brien&quot;&#10;  WHEN &quot;Conan OBrien&quot; THEN &quot;Conan O&apos;Brien&quot;&#10;  WHEN &quot;Craig Kilbon&quot; THEN &quot;Craig Kilborn&quot;&#10;  WHEN &quot;Craig Kilborn&quot; THEN &quot;Craig Kilborn&quot;&#10;  WHEN &quot;Craig Kilburn&quot; THEN &quot;Craig Kilborn&quot;&#10;  WHEN &quot;Craig Killborn&quot; THEN &quot;Craig Kilborn&quot;&#10;  WHEN &quot;Dave Letterman&quot; THEN &quot;David Letterman&quot;&#10;  WHEN &quot;David Leterman&quot; THEN &quot;David Letterman&quot;&#10;  WHEN &quot;David Letterman&quot; THEN &quot;David Letterman&quot;&#10;  WHEN &quot;David Letterman (Current Events segment)&quot; THEN &quot;David Letterman&quot;&#10;  WHEN &quot;Davie Letterman&quot; THEN &quot;David Letterman&quot;&#10;  WHEN &quot;Davis Letterman&quot; THEN &quot;David Letterman&quot;&#10;  WHEN &quot;Jay Leno&quot; THEN &quot;Jay Leno&quot;&#10;  WHEN &quot;Jay Leno;&quot; THEN &quot;Jay Leno&quot;&#10;  WHEN &quot;Seth Meyers&quot; THEN &quot;Seth Meyers&quot;&#10;  WHEN &quot;Seth Myers&quot; THEN &quot;Seth Meyers&quot;&#10;  ELSE [COMEDIAN]&#10;END' />
+            <calculation column='[Date (Exact)]' formula='[DATE]' />
+            <calculation column='[Date (Month / Year)]' formula='(DATEPART(&apos;year&apos;, [DATE])*100 + DATEPART(&apos;month&apos;, [DATE]))' />
+            <calculation column='[Date (Months)]' formula='DATE(DATETRUNC(&apos;month&apos;, [DATE]))' />
+            <calculation column='[Number of Records]' formula='1' />
+          </calculations>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='48983' timestamp-start='2017-01-16 04:31:38.492' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>COMEDIAN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[COMEDIAN]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>COMEDIAN</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Edited Jokes - Late Night Only</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>22</approx-count>
+              <scale>1</scale>
+              <width>1073741823</width>
+              <contains-null>false</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Bill Maher&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Seth Myers&quot;</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US_CI&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DATE</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[DATE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DATE</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Edited Jokes - Late Night Only</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>4108</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='date'>#1996-11-20#</statistic>
+                <statistic aggregation='Max' datatype='date'>#2015-04-30#</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+                <statistic aggregation='Median' datatype='date'>#2006-04-25#</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>0</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;date&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date (Exact)</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date (Exact)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date (Exact)</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Edited Jokes - Late Night Only</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>4108</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='date'>#1996-11-20#</statistic>
+                <statistic aggregation='Max' datatype='date'>#2015-04-30#</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+                <statistic aggregation='Median' datatype='date'>#2006-04-25#</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>0</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;date&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>JOKE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[JOKE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>JOKE</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Edited Jokes - Late Night Only</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>48560</approx-count>
+              <scale>1</scale>
+              <width>1073741823</width>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;&#10;A group of scientists in Washington.have discovered the largest bacteria ever identified.  Not surprisingly, it was on a co&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Zillionaire Microsoft chairman, Bill Gates announced a plan today to give one billion dollars to fund scholarships for minori&quot;</statistic>
+                <statistic aggregation='Count' datatype='integer'>48976</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US_CI&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>4</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>KEY</remote-name>
+              <remote-type>3</remote-type>
+              <local-name>[KEY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>KEY</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Edited Jokes - Late Night Only</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>48983</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Sum' datatype='real'>16435060150.0</statistic>
+                <statistic aggregation='Avg' datatype='real'>335525.79772574158</statistic>
+                <statistic aggregation='Min' datatype='integer'>310268</statistic>
+                <statistic aggregation='Max' datatype='integer'>361543</statistic>
+                <statistic aggregation='Stdev' datatype='real'>14827.976944965583</statistic>
+                <statistic aggregation='StdevP' datatype='real'>14827.825585793778</statistic>
+                <statistic aggregation='Var' datatype='real'>219868900.28043085</statistic>
+                <statistic aggregation='VarP' datatype='real'>219864411.60272062</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+                <statistic aggregation='SumXSqr' datatype='real'>5525156285972832.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>3</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint32&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Number of Records</remote-name>
+              <remote-type>16</remote-type>
+              <local-name>[Number of Records]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Number of Records</remote-alias>
+              <ordinal>4</ordinal>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Sum' datatype='real'>48983.0</statistic>
+                <statistic aggregation='Avg' datatype='real'>1.0</statistic>
+                <statistic aggregation='Min' datatype='integer'>1</statistic>
+                <statistic aggregation='Max' datatype='integer'>1</statistic>
+                <statistic aggregation='Stdev' datatype='real'>0.0</statistic>
+                <statistic aggregation='StdevP' datatype='real'>0.0</statistic>
+                <statistic aggregation='Var' datatype='real'>0.0</statistic>
+                <statistic aggregation='VarP' datatype='real'>0.0</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+                <statistic aggregation='Median' datatype='integer'>1</statistic>
+                <statistic aggregation='SumXSqr' datatype='real'>48983.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint8&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Calculation_2012405379356745748</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Calculation_2012405379356745748]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Calculation_2012405379356745748</remote-alias>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>48559</approx-count>
+              <scale>1</scale>
+              <width>1073741823</width>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;- - Howard Stern received unlimited use of the Hubble space telescope to locate and observe lesbians.&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Zillionaire Microsoft chairman, Bill Gates announced a plan today to give one billion dollars to fund scholarships for minori&quot;</statistic>
+                <statistic aggregation='Count' datatype='integer'>48976</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US_CI&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>4</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Comedian (group)</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Comedian (group)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Comedian (group)</remote-alias>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <scale>1</scale>
+              <width>1073741823</width>
+              <contains-null>false</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Bill Maher&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Seth Meyers&quot;</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+                <statistic aggregation='Median' datatype='string'>&quot;David Letterman&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US_CI&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date (Month / Year)</remote-name>
+              <remote-type>3</remote-type>
+              <local-name>[Date (Month / Year)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date (Month / Year)</remote-alias>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>220</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='integer'>199611</statistic>
+                <statistic aggregation='Max' datatype='integer'>201504</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+                <statistic aggregation='Median' datatype='integer'>200604</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint32&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date (Months)</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date (Months)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date (Months)</remote-alias>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>220</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='date'>#1996-11-01#</statistic>
+                <statistic aggregation='Max' datatype='date'>#2015-04-01#</statistic>
+                <statistic aggregation='Count' datatype='integer'>48983</statistic>
+                <statistic aggregation='Median' datatype='date'>#2006-04-01#</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;date&quot;</attribute>
+              </attributes>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.516367' measure-ordering='alphabetic' measure-percentage='0.288279' parameter-percentage='0.195354' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[Comedian (group)]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bill Maher&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;David Letterman&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Craig Kilborn&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;Jimmy Kimmel&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jay Leno&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Seth Meyers&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Craig Ferguson&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;George Lopez&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Conan O&apos;Brien&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Jimmy Fallon&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Search1' datatype='string' name='[Parameter 1]' param-domain-type='any' role='measure' type='nominal' value='&quot;china&quot;'>
+          <calculation class='tableau' formula='&quot;china&quot;' />
+        </column>
+        <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+          <calculation class='tableau' formula='&quot;Putin&quot;' />
+        </column>
+        <column caption='Wildcard' datatype='string' name='[Parameter 3]' param-domain-type='any' role='measure' type='nominal' value='&quot;&quot;'>
+          <calculation class='tableau' formula='&quot;&quot;' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+      <datasources>
+        <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+        <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+        </column>
+        <column-instance column='[Calculation_2012405379327201288]' derivation='None' name='[none:Calculation_2012405379327201288:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]'>
+        <groupfilter function='member' level='[none:Calculation_2012405379327201288:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+        <target field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Jokes' type='sheet' worksheet='Jokes by Comedian (Treemap)' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Frequency by Year (Sparkline)' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Jokes' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Jokes' type='sheet' worksheet='Frequency by Month (Highlight)' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Frequency by Year (Sparkline)' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Jokes' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action3]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Jokes' type='sheet' worksheet='Frequency by Year (Sparkline)' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Frequency by Month (Highlight)' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Jokes' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Frequency by Month (Highlight)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff'>Frequency of &quot;</run>
+            <run bold='true' fontalignment='1' fontcolor='#ffffff'>&lt;[Parameters].[Parameter 2]&gt;</run>
+            <run fontalignment='1' fontcolor='#ffffff'>&quot; by Month/Year</run>
+            <run fontalignment='1' fontcolor='#ffffff' fontsize='10'>&#10;Click a colored space to filter by month and year. Click on month/year text to filter by month or year.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+              <calculation class='tableau' formula='&quot;Putin&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+            <column caption='Comedian' datatype='string' name='[COMEDIAN]' role='dimension' type='nominal' />
+            <column caption='S1' datatype='integer' name='[Calculation_2012405379326083074]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;)' />
+            </column>
+            <column caption='S2' datatype='integer' name='[Calculation_2012405379326169091]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326083074]+1)' />
+            </column>
+            <column caption='W1' datatype='string' name='[Calculation_2012405379326509061]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN [Parameters].[Parameter 2] ELSE LEFT([Parameters].[Parameter 2],[Calculation_2012405379326083074]-1) END' />
+            </column>
+            <column caption='W2' datatype='string' name='[Calculation_2012405379326644230]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326083074]+1,[Calculation_2012405379326169091]-[Calculation_2012405379326083074])&#10;END' />
+            </column>
+            <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+            </column>
+            <column caption='ZN(SUM([Number of Records]))' datatype='integer' name='[Calculation_2012405379339554825]' role='measure' type='quantitative' user:unnamed='Sheet 3'>
+              <calculation class='tableau' formula='ZN(SUM([Number of Records]))' />
+            </column>
+            <column datatype='string' name='[Comedian (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[COMEDIAN]' new-bin='true'>
+                <bin default-name='false' value='&quot;Conan O&apos;Brien&quot;'>
+                  <value>&quot;Conan OBrian&quot;</value>
+                  <value>&quot;Conan OBrien&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Craig Kilborn&quot;'>
+                  <value>&quot;Craig Kilbon&quot;</value>
+                  <value>&quot;Craig Kilborn&quot;</value>
+                  <value>&quot;Craig Kilburn&quot;</value>
+                  <value>&quot;Craig Killborn&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;David Letterman&quot;'>
+                  <value>&quot;Dave Letterman&quot;</value>
+                  <value>&quot;David Leterman&quot;</value>
+                  <value>&quot;David Letterman&quot;</value>
+                  <value>&quot;David Letterman (Current Events segment)&quot;</value>
+                  <value>&quot;Davie Letterman&quot;</value>
+                  <value>&quot;Davis Letterman&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Jay Leno&quot;'>
+                  <value>&quot;Jay Leno&quot;</value>
+                  <value>&quot;Jay Leno;&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Seth Meyers&quot;'>
+                  <value>&quot;Seth Meyers&quot;</value>
+                  <value>&quot;Seth Myers&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Joke' datatype='string' name='[JOKE]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[DATE]' derivation='Attribute' name='[attr:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Month' name='[mn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379327201288]' derivation='None' name='[none:Calculation_2012405379327201288:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DATE]' derivation='Month-Trunc' name='[tmn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Week-Trunc' name='[twk:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379339554825]' derivation='User' name='[usr:Calculation_2012405379339554825:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]'>
+            <groupfilter function='level-members' level='[Comedian (group)]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Comedian (group)]' />
+              <groupfilter function='level-members' level='[tmn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),WEEK(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Comedian (group)]' />
+              <groupfilter function='level-members' level='[twk:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),YEAR(Date),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Comedian (group)]' />
+              <groupfilter function='level-members' level='[yr:DATE:ok]' />
+              <groupfilter function='level-members' level='[mn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (MONTH(Date))]'>
+            <groupfilter function='level-members' level='[tmn:DATE:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date))]'>
+            <groupfilter function='level-members' level='[yr:DATE:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),WEEK(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),MONTH(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),YEAR(Date),MONTH(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='76' />
+            <format attr='height' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='13' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='' />
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='' />
+            <format attr='text-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='center' />
+            <format attr='text-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='center' />
+            <format attr='vertical-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='center' />
+            <format attr='vertical-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='center' />
+            <format attr='font-size' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='9' />
+            <format attr='font-size' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='9' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379339554825:qk]' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-color' scope='cols' value='#000000' />
+            <format attr='stroke-color' scope='rows' value='#000000' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='div-level' scope='rows' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#1e4371' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379339554825:qk]' />
+              <lod column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:DATE:ok]' />
+              <tooltip column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379339554825:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontsize='14'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]&gt; &lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]&gt;</run>
+                <run bold='true'>&#10;&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379339554825:qk]&gt; </run>
+                <run fontcolor='#666666'>jokes mentioning</run>
+                <run fontcolor='#787878'> &quot;</run>
+                <run bold='true'>&lt;[Parameters].[Parameter 2]&gt;</run>
+                <run>&quot;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]</rows>
+        <cols>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]</cols>
+        <show-full-range>
+          <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[DATE]</column>
+        </show-full-range>
+      </table>
+    </worksheet>
+    <worksheet name='Frequency by Year (Sparkline)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff'>&quot;</run>
+            <run bold='true' fontalignment='1' fontcolor='#ffffff'>&lt;[Parameters].[Parameter 2]&gt;</run>
+            <run fontalignment='1' fontcolor='#ffffff'>&quot; Sparkline</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+              <calculation class='tableau' formula='&quot;Putin&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+            <column caption='Comedian' datatype='string' name='[COMEDIAN]' role='dimension' type='nominal' />
+            <column caption='S1' datatype='integer' name='[Calculation_2012405379326083074]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;)' />
+            </column>
+            <column caption='S2' datatype='integer' name='[Calculation_2012405379326169091]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326083074]+1)' />
+            </column>
+            <column caption='W1' datatype='string' name='[Calculation_2012405379326509061]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN [Parameters].[Parameter 2] ELSE LEFT([Parameters].[Parameter 2],[Calculation_2012405379326083074]-1) END' />
+            </column>
+            <column caption='W2' datatype='string' name='[Calculation_2012405379326644230]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326083074]+1,[Calculation_2012405379326169091]-[Calculation_2012405379326083074])&#10;END' />
+            </column>
+            <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+            </column>
+            <column caption='Sum ZN Lookup' datatype='integer' name='[Calculation_2012405379352752142]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='ZN(LOOKUP(SUM([Number of Records]),0))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[Comedian (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[COMEDIAN]' new-bin='true'>
+                <bin default-name='false' value='&quot;Conan O&apos;Brien&quot;'>
+                  <value>&quot;Conan OBrian&quot;</value>
+                  <value>&quot;Conan OBrien&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Craig Kilborn&quot;'>
+                  <value>&quot;Craig Kilbon&quot;</value>
+                  <value>&quot;Craig Kilborn&quot;</value>
+                  <value>&quot;Craig Kilburn&quot;</value>
+                  <value>&quot;Craig Killborn&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;David Letterman&quot;'>
+                  <value>&quot;Dave Letterman&quot;</value>
+                  <value>&quot;David Leterman&quot;</value>
+                  <value>&quot;David Letterman&quot;</value>
+                  <value>&quot;David Letterman (Current Events segment)&quot;</value>
+                  <value>&quot;Davie Letterman&quot;</value>
+                  <value>&quot;Davis Letterman&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Jay Leno&quot;'>
+                  <value>&quot;Jay Leno&quot;</value>
+                  <value>&quot;Jay Leno;&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Seth Meyers&quot;'>
+                  <value>&quot;Seth Meyers&quot;</value>
+                  <value>&quot;Seth Myers&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Joke' datatype='string' name='[JOKE]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[DATE]' derivation='Attribute' name='[attr:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Month' name='[mn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379327201288]' derivation='None' name='[none:Calculation_2012405379327201288:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DATE]' derivation='Month-Trunc' name='[tmn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379352752142]' derivation='User' name='[usr:Calculation_2012405379352752142:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]'>
+            <groupfilter function='level-members' level='[Comedian (group)]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[yr:DATE:ok]' />
+              <groupfilter function='level-members' level='[mn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]' scope='rows' value='false' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='iyyyy' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]' value='false' />
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='false' />
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='false' />
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='iyyyy' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-level' scope='cols' value='1' />
+            <format attr='band-size' scope='cols' value='0' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#1e4371' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <lod column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:DATE:ok]' />
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]' />
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]&gt;</run>
+                <run> jokes in </run>
+                <run bold='true'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='false'> Peak: </run>
+                <run>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]&gt;</run>
+                <run bold='false'> jokes in </run>
+                <run>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-range-scope' value='table' />
+                <format attr='mark-labels-range-min' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='range' />
+                <format attr='mark-labels-range-field' value='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]</rows>
+        <cols>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]</cols>
+        <show-full-range>
+          <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[DATE]</column>
+        </show-full-range>
+      </table>
+    </worksheet>
+    <worksheet name='Jokes (Text)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff'>Jokes containing &quot;</run>
+            <run bold='true' fontalignment='1' fontcolor='#ffffff'>&lt;[Parameters].[Parameter 2]&gt;</run>
+            <run fontalignment='1' fontcolor='#ffffff'>&quot; (sorted by date)</run>
+            <run fontalignment='1' fontcolor='#ffffff' fontsize='10'>&#10;Hover over text to view entire joke</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+              <calculation class='tableau' formula='&quot;Putin&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+            <column caption='Comedian' datatype='string' name='[COMEDIAN]' role='dimension' type='nominal' />
+            <column caption='S1' datatype='integer' name='[Calculation_2012405379326083074]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;)' />
+            </column>
+            <column caption='S2' datatype='integer' name='[Calculation_2012405379326169091]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326083074]+1)' />
+            </column>
+            <column caption='W1' datatype='string' name='[Calculation_2012405379326509061]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN [Parameters].[Parameter 2] ELSE LEFT([Parameters].[Parameter 2],[Calculation_2012405379326083074]-1) END' />
+            </column>
+            <column caption='W2' datatype='string' name='[Calculation_2012405379326644230]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326083074]+1,[Calculation_2012405379326169091]-[Calculation_2012405379326083074])&#10;END' />
+            </column>
+            <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+            </column>
+            <column caption='Joke (Trim)' datatype='string' name='[Calculation_2012405379356745748]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='TRIM([JOKE])' />
+            </column>
+            <column datatype='string' name='[Comedian (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[COMEDIAN]' new-bin='true'>
+                <bin default-name='false' value='&quot;Conan O&apos;Brien&quot;'>
+                  <value>&quot;Conan OBrian&quot;</value>
+                  <value>&quot;Conan OBrien&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Craig Kilborn&quot;'>
+                  <value>&quot;Craig Kilbon&quot;</value>
+                  <value>&quot;Craig Kilborn&quot;</value>
+                  <value>&quot;Craig Kilburn&quot;</value>
+                  <value>&quot;Craig Killborn&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;David Letterman&quot;'>
+                  <value>&quot;Dave Letterman&quot;</value>
+                  <value>&quot;David Leterman&quot;</value>
+                  <value>&quot;David Letterman&quot;</value>
+                  <value>&quot;David Letterman (Current Events segment)&quot;</value>
+                  <value>&quot;Davie Letterman&quot;</value>
+                  <value>&quot;Davis Letterman&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Jay Leno&quot;'>
+                  <value>&quot;Jay Leno&quot;</value>
+                  <value>&quot;Jay Leno;&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Seth Meyers&quot;'>
+                  <value>&quot;Seth Meyers&quot;</value>
+                  <value>&quot;Seth Myers&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Joke' datatype='string' name='[JOKE]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[KEY]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_2012405379356745748]' derivation='Attribute' name='[attr:Calculation_2012405379356745748:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DATE]' derivation='Month' name='[mn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379327201288]' derivation='None' name='[none:Calculation_2012405379327201288:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2012405379356745748]' derivation='None' name='[none:Calculation_2012405379356745748:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DATE]' derivation='None' name='[none:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[KEY]' derivation='None' name='[none:KEY:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Month-Trunc' name='[tmn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Week-Trunc' name='[twk:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]'>
+            <groupfilter function='level-members' level='[Comedian (group)]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Comedian (group)]' />
+              <groupfilter function='level-members' level='[tmn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),WEEK(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Comedian (group)]' />
+              <groupfilter function='level-members' level='[twk:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),YEAR(Date),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Comedian (group)]' />
+              <groupfilter function='level-members' level='[yr:DATE:ok]' />
+              <groupfilter function='level-members' level='[mn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (MONTH(Date))]'>
+            <groupfilter function='level-members' level='[tmn:DATE:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date))]'>
+            <groupfilter function='level-members' level='[yr:DATE:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[yr:DATE:ok]' />
+              <groupfilter function='level-members' level='[mn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),WEEK(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),MONTH(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group),YEAR(Date),MONTH(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:KEY:ok]' value='45' />
+            <format attr='font-weight' value='normal' />
+            <format attr='font-size' value='11' />
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:DATE:ok]' value='L' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:KEY:ok]' value='false' />
+            <format attr='color' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:DATE:ok]' value='#333333' />
+            <format attr='font-weight' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:DATE:ok]' value='normal' />
+            <format attr='vertical-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:DATE:ok]' value='center' />
+            <format attr='text-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:DATE:ok]' value='center' />
+            <format attr='text-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]' value='center' />
+            <format attr='vertical-align' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]' value='center' />
+            <format attr='color' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]' value='#333333' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='1' />
+            <format attr='band-level' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='stroke-color' scope='rows' value='#555555' />
+            <format attr='div-level' scope='rows' value='2' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='line-visibility' scope='rows' value='on' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#1e4371' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379356745748:nk]' />
+              <tooltip column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:Calculation_2012405379356745748:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontsize='14'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]&gt; </run>
+                <run fontcolor='#666666' fontsize='10'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:DATE:ok]&gt;</run>
+                <run fontsize='12'>&#10;&quot;&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:Calculation_2012405379356745748:nk]&gt;&quot;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379356745748:nk]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:DATE:ok] / ([federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)] / [federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:KEY:ok]))</rows>
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Jokes by Comedian (Treemap)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff'>Who mentioned &quot;</run>
+            <run bold='true' fontalignment='1' fontcolor='#ffffff'>&lt;[Parameters].[Parameter 2]&gt;</run>
+            <run fontalignment='1' fontcolor='#ffffff'>&quot;</run>
+            <run bold='true' fontalignment='1' fontcolor='#ffffff'>Æ </run>
+            <run fontalignment='1' fontcolor='#ffffff'>the most?</run>
+            <run fontalignment='1' fontcolor='#ffffff' fontsize='10'>&#10;Click to filter by comedian</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+              <calculation class='tableau' formula='&quot;Putin&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+            <column caption='Comedian' datatype='string' name='[COMEDIAN]' role='dimension' type='nominal' />
+            <column caption='ZN(SUM([Number of Records]))' datatype='integer' name='[Calculation_2012405379302199296]' role='measure' type='quantitative' user:unnamed='Sheet 2'>
+              <calculation class='tableau' formula='ZN(SUM([Number of Records]))' />
+            </column>
+            <column caption='S1' datatype='integer' name='[Calculation_2012405379326083074]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;)' />
+            </column>
+            <column caption='S2' datatype='integer' name='[Calculation_2012405379326169091]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326083074]+1)' />
+            </column>
+            <column caption='W1' datatype='string' name='[Calculation_2012405379326509061]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN [Parameters].[Parameter 2] ELSE LEFT([Parameters].[Parameter 2],[Calculation_2012405379326083074]-1) END' />
+            </column>
+            <column caption='W2' datatype='string' name='[Calculation_2012405379326644230]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326083074]+1,[Calculation_2012405379326169091]-[Calculation_2012405379326083074])&#10;END' />
+            </column>
+            <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+            </column>
+            <column datatype='string' name='[Comedian (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[COMEDIAN]' new-bin='true'>
+                <bin default-name='false' value='&quot;Conan O&apos;Brien&quot;'>
+                  <value>&quot;Conan OBrian&quot;</value>
+                  <value>&quot;Conan OBrien&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Craig Kilborn&quot;'>
+                  <value>&quot;Craig Kilbon&quot;</value>
+                  <value>&quot;Craig Kilborn&quot;</value>
+                  <value>&quot;Craig Kilburn&quot;</value>
+                  <value>&quot;Craig Killborn&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;David Letterman&quot;'>
+                  <value>&quot;Dave Letterman&quot;</value>
+                  <value>&quot;David Leterman&quot;</value>
+                  <value>&quot;David Letterman&quot;</value>
+                  <value>&quot;David Letterman (Current Events segment)&quot;</value>
+                  <value>&quot;Davie Letterman&quot;</value>
+                  <value>&quot;Davis Letterman&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Jay Leno&quot;'>
+                  <value>&quot;Jay Leno&quot;</value>
+                  <value>&quot;Jay Leno;&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Seth Meyers&quot;'>
+                  <value>&quot;Seth Meyers&quot;</value>
+                  <value>&quot;Seth Myers&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Joke' datatype='string' name='[JOKE]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[DATE]' derivation='Month' name='[mn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379327201288]' derivation='None' name='[none:Calculation_2012405379327201288:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DATE]' derivation='Month-Trunc' name='[tmn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379302199296]' derivation='User' name='[usr:Calculation_2012405379302199296:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (MONTH(Date))]'>
+            <groupfilter function='level-members' level='[tmn:DATE:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date))]'>
+            <groupfilter function='level-members' level='[yr:DATE:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[yr:DATE:ok]' />
+              <groupfilter function='level-members' level='[mn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Comedian (group)]' />
+              <groupfilter function='member' level='[Comedian (group)]' member='&quot;Darrell Hammond&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]' scope='rows' value='false' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='false' />
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='iLLLLL' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-visibility' scope='cols' value='on' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#1e4371' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]' />
+              <color column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]' />
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]' />
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontsize='14'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]&gt;</run>
+                <run fontcolor='#787878'>Æ </run>
+                <run>told</run>
+                <run fontcolor='#787878'>Æ </run>
+                <run bold='true' fontsize='14'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]&gt;</run>
+                <run bold='true'>Æ </run>
+                <run>jokes containing </run>
+                <run fontsize='14'>&quot;</run>
+                <run bold='true' fontsize='14'>&lt;[Parameters].[Parameter 2]&gt;&quot;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]&gt;</run>
+                <run bold='false'>&#10;&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Statistics on &quot;</run>
+            <run bold='true'>&lt;[Parameters].[Parameter 2]&gt;</run>
+            <run>&quot;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+              <calculation class='tableau' formula='&quot;Putin&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+            <column caption='S1' datatype='integer' name='[Calculation_2012405379326083074]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;)' />
+            </column>
+            <column caption='S2' datatype='integer' name='[Calculation_2012405379326169091]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326083074]+1)' />
+            </column>
+            <column caption='W1' datatype='string' name='[Calculation_2012405379326509061]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN [Parameters].[Parameter 2] ELSE LEFT([Parameters].[Parameter 2],[Calculation_2012405379326083074]-1) END' />
+            </column>
+            <column caption='W2' datatype='string' name='[Calculation_2012405379326644230]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326083074]+1,[Calculation_2012405379326169091]-[Calculation_2012405379326083074])&#10;END' />
+            </column>
+            <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+            </column>
+            <column caption='Sum ZN Lookup' datatype='integer' name='[Calculation_2012405379352752142]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='ZN(LOOKUP(SUM([Number of Records]),0))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='1' datatype='integer' name='[Calculation_3243295452540612610]' role='measure' type='quantitative' user:unnamed='Sheet 5'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='1' datatype='integer' name='[Calculation_3243295452540641283]' role='measure' type='quantitative' user:unnamed='Sheet 5'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' datatype='integer' name='[Date (Month / Year)]' role='dimension' type='ordinal' user:agg-type='MY' user:base-field='DATE' user:ui-builder='date-bin-builder'>
+              <calculation class='tableau' formula='(DATEPART(&apos;year&apos;, [DATE])*100 + DATEPART(&apos;month&apos;, [DATE]))' />
+            </column>
+            <column caption='Joke' datatype='string' name='[JOKE]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Avg ZN Lookup' datatype='integer' name='[Sum ZN Lookup (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Date (Month / Year)])' />
+            </column>
+            <column-instance column='[Calculation_3243295452540612610]' derivation='Attribute' name='[attr:Calculation_3243295452540612610:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3243295452540641283]' derivation='Attribute' name='[attr:Calculation_3243295452540641283:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2012405379327201288]' derivation='None' name='[none:Calculation_2012405379327201288:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2012405379352752142]' derivation='User' name='[usr:Calculation_2012405379352752142:qk:17]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[Sum ZN Lookup (copy)]' derivation='User' name='[usr:Sum ZN Lookup (copy):qk:2]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-disallow' x-axis-name='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:Calculation_3243295452540612610:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk:17]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-disallow' x-axis-name='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:Calculation_3243295452540641283:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Sum ZN Lookup (copy):qk:2]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>([federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:Calculation_3243295452540612610:qk] + [federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:Calculation_3243295452540641283:qk])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff'>Trend line for &quot;</run>
+            <run bold='true' fontalignment='1' fontcolor='#ffffff'>&lt;[Parameters].[Parameter 2]&gt;</run>
+            <run fontalignment='1' fontcolor='#ffffff'>&quot;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Edited Jokes - Late Night Only (Edited Jokes - Late Night Only)' name='federated.0wnexc60n5k6xe1793cbt1uczsw6' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Search Box' datatype='string' name='[Parameter 2]' param-domain-type='any' role='measure' type='nominal' value='&quot;Putin&quot;'>
+              <calculation class='tableau' formula='&quot;Putin&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0wnexc60n5k6xe1793cbt1uczsw6'>
+            <column caption='Comedian' datatype='string' name='[COMEDIAN]' role='dimension' type='nominal' />
+            <column caption='S1' datatype='integer' name='[Calculation_2012405379326083074]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;)' />
+            </column>
+            <column caption='S2' datatype='integer' name='[Calculation_2012405379326169091]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FIND([Parameters].[Parameter 2],&quot; &quot;,[Calculation_2012405379326083074]+1)' />
+            </column>
+            <column caption='W1' datatype='string' name='[Calculation_2012405379326509061]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN [Parameters].[Parameter 2] ELSE LEFT([Parameters].[Parameter 2],[Calculation_2012405379326083074]-1) END' />
+            </column>
+            <column caption='W2' datatype='string' name='[Calculation_2012405379326644230]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_2012405379326083074] = 0 THEN &quot;&quot;&#10;ELSEIF [Calculation_2012405379326083074] != 0 AND [Calculation_2012405379326169091] = 0 THEN &quot;&quot;&#10;ELSE MID([Parameters].[Parameter 2],[Calculation_2012405379326083074]+1,[Calculation_2012405379326169091]-[Calculation_2012405379326083074])&#10;END' />
+            </column>
+            <column caption='Search' datatype='boolean' name='[Calculation_2012405379327201288]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='(CONTAINS([JOKE],[Calculation_2012405379326509061]) AND CONTAINS([JOKE],[Calculation_2012405379326644230]))' />
+            </column>
+            <column caption='Sum ZN Lookup' datatype='integer' name='[Calculation_2012405379352752142]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='ZN(LOOKUP(SUM([Number of Records]),0))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[Comedian (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[COMEDIAN]' new-bin='true'>
+                <bin default-name='false' value='&quot;Conan O&apos;Brien&quot;'>
+                  <value>&quot;Conan OBrian&quot;</value>
+                  <value>&quot;Conan OBrien&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Craig Kilborn&quot;'>
+                  <value>&quot;Craig Kilbon&quot;</value>
+                  <value>&quot;Craig Kilborn&quot;</value>
+                  <value>&quot;Craig Kilburn&quot;</value>
+                  <value>&quot;Craig Killborn&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;David Letterman&quot;'>
+                  <value>&quot;Dave Letterman&quot;</value>
+                  <value>&quot;David Leterman&quot;</value>
+                  <value>&quot;David Letterman&quot;</value>
+                  <value>&quot;David Letterman (Current Events segment)&quot;</value>
+                  <value>&quot;Davie Letterman&quot;</value>
+                  <value>&quot;Davis Letterman&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Jay Leno&quot;'>
+                  <value>&quot;Jay Leno&quot;</value>
+                  <value>&quot;Jay Leno;&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Seth Meyers&quot;'>
+                  <value>&quot;Seth Meyers&quot;</value>
+                  <value>&quot;Seth Myers&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Joke' datatype='string' name='[JOKE]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[DATE]' derivation='Attribute' name='[attr:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Month' name='[mn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379327201288]' derivation='None' name='[none:Calculation_2012405379327201288:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DATE]' derivation='Month-Trunc' name='[tmn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2012405379352752142]' derivation='User' name='[usr:Calculation_2012405379352752142:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]'>
+            <groupfilter function='level-members' level='[Comedian (group)]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[yr:DATE:ok]' />
+              <groupfilter function='level-members' level='[mn:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (Comedian (group))]</column>
+            <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Action (YEAR(Date),MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]' scope='rows' value='false' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='iyyyy' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]' value='false' />
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='false' />
+            <format attr='display' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]' value='false' />
+            <format attr='text-format' field='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]' value='iyyyy' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-level' scope='cols' value='1' />
+            <format attr='band-size' scope='cols' value='0' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#1e4371' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]' />
+              <lod column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:DATE:ok]' />
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]' />
+              <text column='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]&gt;</run>
+                <run> jokes in </run>
+                <run bold='true'>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='false'>Peak: </run>
+                <run>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]&gt;</run>
+                <run bold='false'> jokes in </run>
+                <run>&lt;[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-range-scope' value='table' />
+                <format attr='mark-labels-range-min' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='range' />
+                <format attr='mark-labels-range-field' value='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379352752142:qk]</rows>
+        <cols>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[tmn:DATE:ok]</cols>
+        <show-full-range>
+          <column>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[DATE]</column>
+        </show-full-range>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Jokes'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;</run>
+            <run bold='true' fontalignment='1'>Sheet Name</run>
+            <run bold='true' fontalignment='1'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='dash-text'>
+          <format attr='background-color' id='dash-text_46' value='#1e4371' />
+          <format attr='background-color' id='dash-text_47' value='#1e4371' />
+        </style-rule>
+        <style-rule element='dash-container'>
+          <format attr='background-color' id='dash-zone_9' value='#00000000' />
+        </style-rule>
+        <style-rule element='parameter-ctrl'>
+          <format attr='font-weight' value='bold' />
+        </style-rule>
+        <style-rule element='parameter-ctrl-title'>
+          <format attr='font-weight' value='bold' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='33' param='vert' type='layout-flow' w='100000' x='0' y='0'>
+            <zone h='99622' id='31' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99622' id='9' param='horz' type='layout-flow' w='100000' x='0' y='0'>
+                <zone h='99622' id='22' type='layout-basic' w='99766' x='0' y='0'>
+                  <zone h='99622' id='6' param='horz' type='layout-flow' w='66650' x='0' y='0'>
+                    <zone fixed-size='635' h='99622' id='4' is-fixed='true' type='layout-basic' w='66650' x='0' y='0'>
+                      <zone h='99622' id='41' type='layout-basic' w='66650' x='0' y='0'>
+                        <zone h='35505' id='13' param='vert' type='layout-flow' w='66650' x='0' y='0'>
+                          <zone h='35499' id='30' name='Frequency by Month (Highlight)' w='66650' x='0' y='0'>
+                            <layout-cache cell-count-h='12' non-cell-size-h='78' type-h='cell' type-w='fixed' />
+                          </zone>
+                        </zone>
+                        <zone h='52880' id='42' param='vert' type='layout-flow' w='66650' x='0' y='46742'>
+                          <zone h='52880' id='7' name='Jokes (Text)' w='66650' x='0' y='46742'>
+                            <layout-cache cell-count-w='1' fixed-size-h='689' non-cell-size-w='199' type-h='fixed' type-w='cell' />
+                          </zone>
+                        </zone>
+                        <zone fixed-size='82' h='11237' id='24' is-fixed='true' name='Frequency by Year (Sparkline)' w='66650' x='0' y='35505'>
+                          <layout-cache minheight='100' type-h='scalable' type-w='cell' />
+                        </zone>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone fixed-size='841' h='89329' id='17' is-fixed='true' name='Jokes by Comedian (Treemap)' w='33116' x='66650' y='10293'>
+                    <layout-cache type-h='cell' type-w='cell' />
+                  </zone>
+                  <zone custom-title='true' fixed-size='300' h='3966' id='10' is-fixed='true' mode='type_in' param='[Parameters].[Parameter 2]' show-title='false' type='paramctrl' w='16558' x='83208' y='6327'>
+                    <formatted-text>
+                      <run fontalignment='1' fontsize='18'>Search for a word</run>
+                    </formatted-text>
+                  </zone>
+                  <zone fixed-size='58' forceUpdate='true' h='6327' id='46' is-fixed='true' type='text' w='33116' x='66650' y='0'>
+                    <formatted-text>
+                      <run fontalignment='1' fontcolor='#ffffff' fontname='Arial Narrow' fontsize='18'>Your search term is &quot;</run>
+                      <run bold='true' fontalignment='1' fontcolor='#ffffff' fontname='Arial Narrow' fontsize='18'>&lt;[Parameters].[Parameter 2]&gt;</run>
+                      <run fontalignment='1' fontcolor='#ffffff' fontname='Arial Narrow' fontsize='18'>&quot;</run>
+                      <run fontalignment='1' fontcolor='#ffffff' fontname='Arial Narrow' fontsize='10'>&#10;Type a word or phrase below to search the database</run>
+                    </formatted-text>
+                  </zone>
+                  <zone forceUpdate='true' h='3966' id='47' type='text' w='16558' x='66650' y='6327'>
+                    <formatted-text>
+                      <run bold='true' fontalignment='2' fontcolor='#ffffff' fontname='Arial Narrow' fontsize='12'>Enter search term here </run>
+                      <run bold='true' fontalignment='2' fontcolor='#ffffff' fontname='Arial Narrow' fontsize='16'>→ </run>
+                    </formatted-text>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='Jokes'>
+      <viewpoints>
+        <viewpoint name='Frequency by Month (Highlight)'>
+          <zoom type='entire-view' />
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]</field>
+                    <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]</field>
+                    <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:DATE:ok]</field>
+                    <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379339554825:qk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>9</value>
+                  <value>2013</value>
+                  <value>%many-values%</value>
+                  <value>14</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+        </viewpoint>
+        <viewpoint name='Frequency by Year (Sparkline)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Jokes (Text)'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Jokes by Comedian (Treemap)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='30' />
+      <device-preview selected='Desktop'>
+        <device name='Generic Desktop Monitor' type='Desktop' />
+        <device name='iPad Mini' type='Tablet' />
+      </device-preview>
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='Frequency by Month (Highlight)'>
+      <cards>
+        <edge name='left'>
+          <strip size='195'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card mode='type_in' param='[Parameters].[Parameter 2]' type='parameter' />
+            <card AVG='true' KURTOSIS='true' MAX='true' MEDIAN='true' MIN='true' QUART1='true' QUART3='true' SKEWNESS='true' STDEV='true' SUM='true' type='summary' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[attr:DATE:ok]</field>
+            <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379324764161:nk]</field>
+            <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[none:Calculation_2012405379327201288:nk]</field>
+            <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379339554825:qk]</field>
+            <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[yr:DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='Frequency by Year (Sparkline)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='Jokes (Text)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='Jokes by Comedian (Treemap)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0wnexc60n5k6xe1793cbt1uczsw6].[usr:Calculation_2012405379302199296:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[Comedian (group)]</field>
+            <field>[federated.0wnexc60n5k6xe1793cbt1uczsw6].[mn:DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+</workbook>
