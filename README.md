@@ -8,3 +8,8 @@ This is the working folder that contains:
 - HTML files used to updated the database
 ### Test Files
 - Self-explanatory folder that contains the various successful and unsuccessful attempts to parse the text. I decided to upload them to show both my thought process and my unique affinity for using 'csv' in the name of xlsx files.
+
+## TODO
+- Create PDF of walkthrough detailing the steps taken to download, parse, and cleanse the data for the database.
+- 
+
